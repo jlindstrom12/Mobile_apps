@@ -6,6 +6,23 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		EB883D712CB8666A002D7D0B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EB883D702CB8666A002D7D0B /* Alamofire */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EB883D792CB86BA7002D7D0B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		EB883D5B2CB8663F002D7D0B /* Viator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Viator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB883D712CB8666A002D7D0B /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,16 +73,20 @@
 				EB883D572CB8663F002D7D0B /* Sources */,
 				EB883D582CB8663F002D7D0B /* Frameworks */,
 				EB883D592CB8663F002D7D0B /* Resources */,
+				EB883D792CB86BA7002D7D0B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				EB883D772CB86B98002D7D0B /* PBXTargetDependency */,
+				EB883D752CB86B25002D7D0B /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				EB883D5D2CB8663F002D7D0B /* Viator */,
 			);
 			name = Viator;
 			packageProductDependencies = (
+				EB883D702CB8666A002D7D0B /* Alamofire */,
 			);
 			productName = Viator;
 			productReference = EB883D5B2CB8663F002D7D0B /* Viator.app */;
@@ -94,6 +116,9 @@
 			);
 			mainGroup = EB883D522CB8663F002D7D0B;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				EB883D6F2CB8666A002D7D0B /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = EB883D5C2CB8663F002D7D0B /* Products */;
 			projectDirPath = "";
@@ -123,6 +148,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EB883D752CB86B25002D7D0B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = EB883D742CB86B25002D7D0B /* Alamofire */;
+		};
+		EB883D772CB86B98002D7D0B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = EB883D762CB86B98002D7D0B /* AlamofireDynamic */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		EB883D672CB86641002D7D0B /* Debug */ = {
@@ -322,6 +358,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EB883D6F2CB8666A002D7D0B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EB883D702CB8666A002D7D0B /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EB883D6F2CB8666A002D7D0B /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		EB883D742CB86B25002D7D0B /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EB883D6F2CB8666A002D7D0B /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		EB883D762CB86B98002D7D0B /* AlamofireDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EB883D6F2CB8666A002D7D0B /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = AlamofireDynamic;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EB883D532CB8663F002D7D0B /* Project object */;
 }

@@ -6,18 +6,44 @@
 //
 
 import SwiftUI
+import Alamofire
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+  @State private var activities: [Activity] = []
+  @State private var isLoading = false
+  @State private var errorMessage: String?
+  
+  var body: some View {
+    NavigationView {
+      List {
+        ForEach(activities) { activity in
+          VStack(alignment: .leading) {
+            Text(activity.title)
+              .font(.headline)
+            Text(activity.description)
+              .font(.caption)
+              .font(.subheadline)
+              .lineLimit(2)
+          }
         }
-        .padding()
+        
+      }.navigationTitle("Viator Activities")
+        .onAppear(perform: loadActivities)
     }
-}
+  }
+    
+    func loadActivities() {
+      Task{
+        let viator = Viator()
+        if let fetchedActivities = try? await viator.searchActivities() {
+          DispatchQueue.main.async {
+            self.activities = fetchedActivities
+          }
+        }
+        
+      }
+    }
+  }
 
 #Preview {
     ContentView()
